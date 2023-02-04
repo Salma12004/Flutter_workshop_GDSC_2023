@@ -3,17 +3,25 @@ void main(List<String> args) {
   // convert string to int
   String number = '10';
   int number2;
+  number2=int.parse(number);
+  print(number2);
   // output should be 10
 
   // convert int to string
   int number3 = 10;
   String number4;
+  number4=number3.toString();
+  print(number4);
   // output should be '10'
 
   // uppercase and lowercase a string
   String name = 'ahmed';
   String upperCaseName;
   String lowerCaseName;
+  upperCaseName=name.toUpperCase();
+  lowerCaseName=name.toLowerCase();
+  print(upperCaseName);
+  print(lowerCaseName);
   // output should be AHMED and ahmed
 
   // check if a string is empty or not
@@ -21,19 +29,27 @@ void main(List<String> args) {
   String name3 = 'ahmed';
   bool isEmpty;
   bool isNotEmpty;
+  isEmpty=name2.isEmpty;
+  isNotEmpty=name3.isNotEmpty;
+  print(isEmpty);
+  print(isNotEmpty);
   // output should be true and false
 
   // check if a string contains a substring
   String name4 = 'ahmed';
   String substring = 'med';
   bool contains;
+  contains=name4.contains(substring);
+  print(contains);
   // output should be true
 
   // check the type of a variable
   dynamic name5 = 'ahmed';
   int number5 = 10;
-  bool isString;
-  bool isInt;
+  bool isString=name5 is String;
+  bool isInt=number5 is int;
+  print(isString);
+  print(isInt);
   // output should be true and false
 
   //! MEDIUM
@@ -41,13 +57,20 @@ void main(List<String> args) {
   // convert map into Key- Value pairs in list without using for loop
 
   Map<String, int> grades = {'Ahmed': 75, 'Youssef': 82, 'Sherif': 90};
+  List list1=[];
+  grades.forEach((key, value) {list1.add({key:value});});
+  print(list1);
 
   // convert map into Key- Value pairs in list without using for loop
   List<MapEntry<String, int>> entries;
+  entries=grades.entries.toList();
+  print(entries);
 
   // convert this list into set
   List<int> numbers = [1, 2, 3, 4, 5, 1, 2, 3];
   Set<int> uniqueNumbers;
+  uniqueNumbers=numbers.toSet();
+  print(uniqueNumbers);
 
   // check if "Ahmed" exsist in the map or not without using for loop
   Map<String, int> grades2 = {
@@ -59,6 +82,8 @@ void main(List<String> args) {
     'Ali': 90
   };
   bool isAhmedExist;
+  isAhmedExist=grades2.containsKey("Ahmed");
+  print(isAhmedExist);
 
   // check if "Ahmed" exsist in the List or not without using for loop
 
@@ -72,6 +97,8 @@ void main(List<String> args) {
   ];
 
   bool isAhmedExistInList;
+  isAhmedExistInList=names.contains("Ahmed");
+  print(isAhmedExistInList);
 
   //! BONUS NULL SAFETY
   // Search for this "??" double question mark in the code and try to understand what it does
@@ -79,7 +106,8 @@ void main(List<String> args) {
   // check if the name is null or not if it is null then return "John" else return the name
   String? namee;
   String defaultName = 'John Doe';
-  String actualName;
+  String actualName=namee ?? defaultName;
+  print(actualName);
 
   // check if the name is null or not if it is null then return "John" else return the name
 }

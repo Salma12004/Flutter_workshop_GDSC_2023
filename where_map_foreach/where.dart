@@ -1,7 +1,10 @@
+
 void main(List<String> args) {
   // Use the where method to filter a List of integers and only keep values greater than 3.
   List<int> numbers2 = [1, 2, 3, 4, 5];
   List<int> filteredNumbers;
+  filteredNumbers= numbers2.where((element)=> element>3).toList();
+  print(filteredNumbers);
   // output should be [4, 5]
 
   // Use the where method to filter a List of strings and only keep values that start with the letter "A".
@@ -14,6 +17,8 @@ void main(List<String> args) {
     'Ali'
   ];
   List<String> filteredNames;
+  filteredNames=names2.where((element)=> element[0]=='A').toList();
+  print(filteredNames);
   //output should be ['Ahmed', 'Ali']
 
   // Use the where method to filter a List of strings and only keep values that start with the letter "A" and end with the letter "d".
@@ -26,11 +31,14 @@ void main(List<String> args) {
     'Ali'
   ];
   List<String> filteredNames2;
+  filteredNames2=names3.where((element)=> element.startsWith('A') && element.endsWith('d')).toList();
+  print(filteredNames2);
   //output should be ['Ahmed']
 
   // DONT USE FOR LOOP  find the first number that is greater than 4 in the list
   List<int> numbers3 = [1, 2, 3, 5, 9, 10];
-  int firstNumberGreaterThan4;
+  int firstNumberGreaterThan4= numbers3.firstWhere((element)=> element>4);
+  print(firstNumberGreaterThan4);
   // output should be 5
 
   // MORE ADVANCED
@@ -41,5 +49,7 @@ void main(List<String> args) {
     {'name': 'Jim', 'age': '35'}
   ];
   List<Map<String, String>> johns;
+  johns=people.where((element) => element['name']=='John').toList();
+  print(johns);
   // output should be [{'name': 'John', 'age': '30'}]
 }
